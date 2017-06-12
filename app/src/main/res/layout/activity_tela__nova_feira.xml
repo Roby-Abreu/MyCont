@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.abreu.roby.mycont.Tela_NovaFeira"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Feira: "
+        android:textSize="18dp"
+        android:textColor="@android:color/holo_red_dark"
+        android:textStyle="bold"
+        android:layout_marginStart="45dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView_nomeFeira"
+        tools:layout_constraintBaseline_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="45dp" />
+
+    <TextView
+        android:id="@+id/textViewX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Data:"
+        android:textSize="18dp"
+        android:textColor="@android:color/holo_red_dark"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textVie_dataFeira"
+        tools:layout_constraintBaseline_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/textView6" />
+
+    <TextView
+        android:id="@+id/textVie_dataFeira"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="xx/xx/xxxx"
+        android:textSize="18dp"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView_nomeFeira"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/textView_nomeFeira" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="O que deseja fazer: "
+        android:textSize="18dp"
+        android:textColor="@android:color/holo_red_dark"
+        android:textStyle="bold"
+        android:layout_marginStart="44dp"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="@+id/button_fazerVenda"
+        android:layout_marginTop="104dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="103dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="44dp" />
+
+    <Button
+        android:id="@+id/button_fazerVenda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Venda"
+        android:layout_marginStart="37dp"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="215dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="37dp"
+        android:onClick="vender"/>
+
+    <Button
+        android:id="@+id/button_fazerGasto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gasto"
+        android:onClick="gastar"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginTop="11dp"
+        app:layout_constraintTop_toBottomOf="@+id/button_fazerVenda"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/button_fazerVenda"
+        android:layout_marginLeft="0dp" />
+
+    <Button
+        android:id="@+id/button_fecharFeira"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fechar Feira"
+        android:layout_marginEnd="22dp"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="45dp"
+        android:layout_marginRight="22dp"
+        android:onClick="f"/>
+
+    <TextView
+        android:id="@+id/textView_nomeFeira"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="18dp"
+        android:layout_marginStart="10dp"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginTop="53dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/textView6"
+        android:layout_marginLeft="10dp" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lucro: R$"
+        android:textSize="18dp"
+        android:textColor="@android:color/holo_red_dark"
+        android:textStyle="bold"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintRight_toLeftOf="@+id/textView14"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="@+id/button_fazerGasto"
+        android:layout_marginTop="43dp"
+        android:layout_marginBottom="42dp"
+        app:layout_constraintTop_toTopOf="@+id/button_fazerVenda"
+        android:layout_marginRight="10dp" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0,00"
+        android:textSize="18dp"
+        android:layout_marginEnd="55dp"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView13"
+        tools:layout_constraintBaseline_creator="1"
+        android:layout_marginRight="51dp" />
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="0dp">
+
+        <EditText
+            android:id="@+id/editTextGetNomeProd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Produto"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintBottom_creator="1"
+            app:layout_constraintBottom_toTopOf="@+id/editTextGetQTD"
+            app:layout_constraintRight_toRightOf="@+id/editTextGetQTD"
+            tools:layout_constraintLeft_creator="1"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintLeft_toLeftOf="@+id/editTextGetQTD" />
+
+        <EditText
+            android:id="@+id/editTextGetQTD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Quantidade"
+            android:inputType="number"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintBottom_creator="1"
+            app:layout_constraintBottom_toTopOf="@+id/editTextGetValorProd"
+            app:layout_constraintRight_toRightOf="@+id/editTextGetValorProd"
+            tools:layout_constraintLeft_creator="1"
+            android:layout_marginBottom="12dp"
+            app:layout_constraintLeft_toLeftOf="@+id/editTextGetValorProd" />
+
+        <EditText
+            android:id="@+id/editTextGetValorProd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Valor de Produçao"
+            android:inputType="numberDecimal"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintBottom_creator="1"
+            app:layout_constraintBottom_toTopOf="@+id/editText_getValorVenda"
+            app:layout_constraintRight_toRightOf="@+id/editText_getValorVenda"
+            tools:layout_constraintLeft_creator="1"
+            android:layout_marginBottom="11dp"
+            app:layout_constraintLeft_toLeftOf="@+id/editText_getValorVenda" />
+
+        <EditText
+            android:id="@+id/editText_getValorVenda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Valor de Venda"
+            android:inputType="numberDecimal"
+            tools:layout_constraintBottom_creator="1"
+            android:layout_marginStart="29dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_constraintLeft_creator="1"
+            android:layout_marginBottom="13dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="29dp" />
+    </android.support.constraint.ConstraintLayout>
+</LinearLayout>

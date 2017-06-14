@@ -15,11 +15,11 @@ import java.util.Date;
 import java.util.List;
 
 public class Tela_NovaFeira extends AppCompatActivity {
-    static final int indentificador = 1;
     TextView tvNF, tvDF, lucro;
     String NF, data;
     int idFeira, i;
     Button vender, fechar;
+    double tt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +42,8 @@ public class Tela_NovaFeira extends AppCompatActivity {
 
         data = DateFormat.getDateInstance().format(new Date());
         tvDF.setText(data);
+
+
 
         fechar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,15 +108,11 @@ public class Tela_NovaFeira extends AppCompatActivity {
 
     @Override
     public void finish(){
-        bdHelper banco = new bdHelper(this);
-        String r = banco.trocarStatusfeira(NF);
-        if (r=="Feira em Aberto!"){
-            Toast.makeText(this, "ok", Toast.LENGTH_SHORT).show();
-        }
-        Intent intent = new Intent();
-        setResult(1, intent);
+        Feira feira = new Feira();
+        feira.setLucro_total(tt);
         super.finish();
     }
+
 
     @Override
     protected void onResume() {
@@ -123,7 +121,7 @@ public class Tela_NovaFeira extends AppCompatActivity {
         double vv = application.valorTotalVendaFeira;
         double vg = application.valorTotalGastoFeira;
 
-        double tt = vv-vg;
+        tt = vv-vg;
         lucro.setText(String.valueOf(tt));
     }
 

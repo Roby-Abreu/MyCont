@@ -101,6 +101,7 @@ public class TelaPrincipal extends AppCompatActivity
                     feira.setNomeDafeira(srt);
                     feira.setDataAfeira(dataAtual);
                     feira.setStatus("Em aberto");
+                    feira.setLucro_total(0.0);
                     bdHelper banco = new bdHelper(getApplicationContext());
                     banco.inserirNovaFeira(feira);
                     finish();
@@ -109,7 +110,7 @@ public class TelaPrincipal extends AppCompatActivity
                     bundle.putInt("id_feira", feira.getId_feira());
                     Intent intent = new Intent(getApplicationContext(), Tela_NovaFeira.class);
                     intent.putExtras(bundle);
-                    startActivityForResult(intent, 1);
+                    startActivity(intent);
                 }
             });dialogo.show();
         } else if (id == R.id.nav_produtos) {
@@ -125,9 +126,5 @@ public class TelaPrincipal extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
     }
 }

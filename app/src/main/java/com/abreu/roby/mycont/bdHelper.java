@@ -59,6 +59,7 @@ public class bdHelper extends SQLiteOpenHelper{
                 + "nomeDafeira TEXT,"
                 + "dataAfeira INTEGER,"
                 + "status TEXT"
+                + "Lucro_total DOUBLE"
                 + ")";
         db.execSQL(sqlCriarTabelaUsuario);
         db.execSQL(sqlCriarTabelaProduto);
@@ -122,6 +123,7 @@ public class bdHelper extends SQLiteOpenHelper{
         cv.put("nomeDafeira", feira.getNomeDafeira());
         cv.put("dataAfeira", feira.getDataAfeira());
         cv.put("status", feira.getStatus());
+        cv.put("lucro_total", feira.getLucro_total());
         db.insert("feira", null, cv);
         db.close();
     }
@@ -235,21 +237,6 @@ public class bdHelper extends SQLiteOpenHelper{
                 usuario.setEmail(c.getString(4));
                 resultado = "Usuario valido";
             }while (c.moveToNext());
-        }
-        db.close();
-        return resultado;
-    }
-    public String trocarStatusfeira(String NF){
-        SQLiteDatabase db = getReadableDatabase();
-        String resultado = "";
-        String sqlTrocaStatus = "UPDATE feira SET status = 'Encerrada' WHERE nomeDafeira = ?";
-        String[] selectionArgs = new String[]{NF};
-        Cursor c = db.rawQuery(sqlTrocaStatus, selectionArgs);
-        c.moveToFirst();
-        if (c.moveToFirst()){
-            resultado = "Feira encerrada!";
-        }else {
-            resultado = "Feira em Aberto!";
         }
         db.close();
         return resultado;
